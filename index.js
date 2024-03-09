@@ -41,8 +41,8 @@ app.get("/", async (req, res) => {
     const countries = await checkVisited();
     res.render("index.ejs", { countries: countries, total: countries.length });
   } catch (err) {
-    console.error("Error loading quiz data:", err);
-    res.status(500).send("Internal Server Error");
+    console.error("Error loading data:", err);
+    res.resend("/");
   }
 });
 
